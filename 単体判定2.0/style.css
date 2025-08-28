@@ -1,0 +1,74 @@
+/* =================================== */
+/* 詳細ページ用アイコン（大） */
+/* =================================== */
+.solo-icon-indicator-large {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  z-index: 9999;
+  width: 70px;
+  height: 70px;
+  
+  /* ★変更点: 色を黒背景・金色文字に戻す */
+  background-color: black;
+  color: #DAA520;
+  border: 3px solid #DAA520;
+
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  /* フォントは最も太い設定を維持 */
+  font-weight: 900; 
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  
+  opacity: 0;
+  transform: scale(0.5);
+  animation: fadeInZoom 0.5s forwards;
+}
+
+/* =================================== */
+/* 一覧ページ・サムネイル用アイコン（小）*/
+/* =================================== */
+
+.thumbnail.show-solo-icon::before {
+  content: '単体';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+
+  /* ★変更点: 色を黒背景・金色文字に戻す */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #DAA520;
+  border: 1.5px solid #DAA520;
+
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  /* フォントは最も太い設定を維持 */
+  font-weight: 900;
+  font-family: sans-serif;
+  
+  pointer-events: none;
+}
+
+/* アイコンの位置を正しく決めるため、親要素に基準点を設定 */
+.thumbnail {
+  position: relative;
+}
+
+/* 共通のアニメーション */
+@keyframes fadeInZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

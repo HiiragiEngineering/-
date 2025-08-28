@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "単体アイコン表示 Ver. 2.0",
+  "version": "2.0",
+  "description": "missav.aiのページで、単体作品にアイコンを表示します。",
+  "content_scripts": [
+    {
+      "matches": ["https://missav.ai/*"],
+      "css": ["style.css"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ]
+}
